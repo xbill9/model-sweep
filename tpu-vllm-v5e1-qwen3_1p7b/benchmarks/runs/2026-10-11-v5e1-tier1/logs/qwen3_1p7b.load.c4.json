@@ -1,0 +1,28 @@
+{
+ "model": "Qwen/Qwen3-1.7B",
+ "concurrency": 4,
+ "max_tokens": 256,
+ "ignore_eos": true,
+ "repeats": 3,
+ "passes": [
+  {
+   "wall_s": 1.459,
+   "completion_tokens": 1024,
+   "output_tok_per_s": 701.7
+  },
+  {
+   "wall_s": 1.459,
+   "completion_tokens": 1024,
+   "output_tok_per_s": 701.9
+  },
+  {
+   "wall_s": 1.459,
+   "completion_tokens": 1024,
+   "output_tok_per_s": 701.8
+  }
+ ],
+ "prompt_tokens": 118,
+ "output_tok_per_s": 701.8,
+ "output_tok_per_s_min": 701.7,
+ "output_tok_per_s_max": 701.9
+}

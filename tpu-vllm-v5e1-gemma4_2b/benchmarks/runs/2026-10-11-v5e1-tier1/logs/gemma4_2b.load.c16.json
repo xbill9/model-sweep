@@ -1,0 +1,28 @@
+{
+ "model": "google/gemma-4-E2B-it",
+ "concurrency": 16,
+ "max_tokens": 256,
+ "ignore_eos": true,
+ "repeats": 3,
+ "passes": [
+  {
+   "wall_s": 2.203,
+   "completion_tokens": 4096,
+   "output_tok_per_s": 1858.9
+  },
+  {
+   "wall_s": 2.171,
+   "completion_tokens": 4096,
+   "output_tok_per_s": 1887.1
+  },
+  {
+   "wall_s": 2.169,
+   "completion_tokens": 4096,
+   "output_tok_per_s": 1888.2
+  }
+ ],
+ "prompt_tokens": 444,
+ "output_tok_per_s": 1887.1,
+ "output_tok_per_s_min": 1858.9,
+ "output_tok_per_s_max": 1888.2
+}

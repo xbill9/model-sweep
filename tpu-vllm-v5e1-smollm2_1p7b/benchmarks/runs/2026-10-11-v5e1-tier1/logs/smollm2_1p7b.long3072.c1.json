@@ -1,0 +1,44 @@
+{
+ "model": "HuggingFaceTB/SmolLM2-1.7B-Instruct",
+ "concurrency": 1,
+ "max_tokens": 256,
+ "ignore_eos": true,
+ "repeats": 3,
+ "target_input_tokens": 3072,
+ "prompt_tokens_per_request": 3124,
+ "unique_prefix_per_request": true,
+ "passes": [
+  {
+   "wall_s": 1.857,
+   "prompt_tokens": 3124,
+   "completion_tokens": 256,
+   "output_tok_per_s": 137.8,
+   "total_tok_per_s": 1819.8,
+   "ttft_median_s": 0.187,
+   "ttft_max_s": 0.187
+  },
+  {
+   "wall_s": 1.857,
+   "prompt_tokens": 3124,
+   "completion_tokens": 256,
+   "output_tok_per_s": 137.8,
+   "total_tok_per_s": 1819.9,
+   "ttft_median_s": 0.187,
+   "ttft_max_s": 0.187
+  },
+  {
+   "wall_s": 1.858,
+   "prompt_tokens": 3124,
+   "completion_tokens": 256,
+   "output_tok_per_s": 137.8,
+   "total_tok_per_s": 1819.5,
+   "ttft_median_s": 0.187,
+   "ttft_max_s": 0.187
+  }
+ ],
+ "output_tok_per_s": 137.8,
+ "output_tok_per_s_min": 137.8,
+ "output_tok_per_s_max": 137.8,
+ "total_tok_per_s": 1819.8,
+ "ttft_median_s": 0.187
+}

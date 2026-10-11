@@ -1,0 +1,28 @@
+{
+ "model": "HuggingFaceTB/SmolLM2-1.7B-Instruct",
+ "concurrency": 4,
+ "max_tokens": 256,
+ "ignore_eos": true,
+ "repeats": 3,
+ "passes": [
+  {
+   "wall_s": 1.905,
+   "completion_tokens": 1024,
+   "output_tok_per_s": 537.4
+  },
+  {
+   "wall_s": 1.906,
+   "completion_tokens": 1024,
+   "output_tok_per_s": 537.2
+  },
+  {
+   "wall_s": 1.905,
+   "completion_tokens": 1024,
+   "output_tok_per_s": 537.4
+  }
+ ],
+ "prompt_tokens": 193,
+ "output_tok_per_s": 537.4,
+ "output_tok_per_s_min": 537.2,
+ "output_tok_per_s_max": 537.4
+}

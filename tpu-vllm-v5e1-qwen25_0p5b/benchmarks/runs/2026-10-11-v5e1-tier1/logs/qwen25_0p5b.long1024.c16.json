@@ -1,0 +1,44 @@
+{
+ "model": "Qwen/Qwen2.5-0.5B-Instruct",
+ "concurrency": 16,
+ "max_tokens": 256,
+ "ignore_eos": true,
+ "repeats": 3,
+ "target_input_tokens": 1024,
+ "prompt_tokens_per_request": 1061,
+ "unique_prefix_per_request": true,
+ "passes": [
+  {
+   "wall_s": 1.188,
+   "prompt_tokens": 16982,
+   "completion_tokens": 4096,
+   "output_tok_per_s": 3447.1,
+   "total_tok_per_s": 17738.9,
+   "ttft_median_s": 0.153,
+   "ttft_max_s": 0.222
+  },
+  {
+   "wall_s": 1.226,
+   "prompt_tokens": 16982,
+   "completion_tokens": 4096,
+   "output_tok_per_s": 3340.5,
+   "total_tok_per_s": 17190.2,
+   "ttft_median_s": 0.147,
+   "ttft_max_s": 0.24
+  },
+  {
+   "wall_s": 1.204,
+   "prompt_tokens": 16982,
+   "completion_tokens": 4096,
+   "output_tok_per_s": 3401.7,
+   "total_tok_per_s": 17505.2,
+   "ttft_median_s": 0.153,
+   "ttft_max_s": 0.221
+  }
+ ],
+ "output_tok_per_s": 3401.7,
+ "output_tok_per_s_min": 3340.5,
+ "output_tok_per_s_max": 3447.1,
+ "total_tok_per_s": 17505.2,
+ "ttft_median_s": 0.153
+}

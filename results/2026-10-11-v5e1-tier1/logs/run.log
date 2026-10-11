@@ -1,0 +1,108 @@
+[sweep 2026-10-11T17:14:28Z] start 2026-10-11-v5e1-tier1 on us-west4-a, arms arms-v5e1-tier1.txt
+docker.io/vllm/vllm-tpu@sha256:19a1a0526476f902eb83e1057f3d8938f35b457dd7716a30e9ab4f7bee90d507
+[sweep 2026-10-11T17:16:28Z] image vllm/vllm-tpu@sha256:19a1a0526476f902eb83e1057f3d8938f35b457dd7716a30e9ab4f7bee90d507
+[sweep 2026-10-11T17:16:38Z] vllm 0.29.1rc1.dev468+g0b7f11a1e
+[sweep 2026-10-11T17:16:44Z] serving google/gemma-4-E2B-it as gemma4_2b (load+long+gen, parser=gemma4,mm=image+audio+video)
+READY google/gemma-4-E2B-it after 391s
+[sweep 2026-10-11T17:23:15Z] READY google/gemma-4-E2B-it after 391s
+[sweep 2026-10-11T17:23:22Z] gemma4_2b load at concurrency 1: 146.3 tok/s, range 146.2 to 146.3
+[sweep 2026-10-11T17:23:29Z] gemma4_2b load at concurrency 4: 558.3 tok/s, range 558.2 to 558.3
+[sweep 2026-10-11T17:23:38Z] gemma4_2b load at concurrency 16: 1887.1 tok/s, range 1858.9 to 1888.2
+[sweep 2026-10-11T17:23:51Z] gemma4_2b long 1024 at concurrency 1: 1043 prompt tokens, 141.4 out tok/s, ttft 0.061 s
+[sweep 2026-10-11T17:24:00Z] gemma4_2b long 1024 at concurrency 4: 1043 prompt tokens, 514.5 out tok/s, ttft 0.172 s
+[sweep 2026-10-11T17:24:10Z] gemma4_2b long 1024 at concurrency 16: 1043 prompt tokens, 1562.8 out tok/s, ttft 0.347 s
+[sweep 2026-10-11T17:24:18Z] gemma4_2b long 3072 at concurrency 1: 3104 prompt tokens, 134.7 out tok/s, ttft 0.122 s
+[sweep 2026-10-11T17:24:27Z] gemma4_2b long 3072 at concurrency 4: 3104 prompt tokens, 441.3 out tok/s, ttft 0.348 s
+[sweep 2026-10-11T17:24:43Z] gemma4_2b long 3072 at concurrency 16: 3104 prompt tokens, 1048.7 out tok/s, ttft 0.865 s
+[sweep 2026-10-11T17:29:24Z] gemma4_2b gsm8k: {"task": "gsm8k", "max_tokens": 2048, "n": 1319, "right": 1202, "accuracy": 0.9113, "errors": 0, "truncated": 2, "wall_s": 274.9}
+[sweep 2026-10-11T17:29:32Z] gemma4_2b bfcl_simple: {"task": "bfcl_simple", "max_tokens": 512, "n": 400, "right": 371, "accuracy": 0.9275, "errors": 0, "truncated": 0, "wall_s": 8.5}
+[sweep 2026-10-11T17:29:48Z] serving Qwen/Qwen3-4B as qwen3_4b (load+long+gen, parser=hermes,nothink)
+READY Qwen/Qwen3-4B after 270s
+[sweep 2026-10-11T17:34:18Z] READY Qwen/Qwen3-4B after 270s
+[sweep 2026-10-11T17:34:30Z] qwen3_4b load at concurrency 1: 88.0 tok/s, range 87.9 to 88.0
+[sweep 2026-10-11T17:34:43Z] qwen3_4b load at concurrency 4: 331.6 tok/s, range 331.6 to 331.7
+[sweep 2026-10-11T17:34:58Z] qwen3_4b load at concurrency 16: 1080.2 tok/s, range 1079.5 to 1080.5
+[sweep 2026-10-11T17:35:16Z] qwen3_4b long 1024 at concurrency 1: 1044 prompt tokens, 84.1 out tok/s, ttft 0.101 s
+[sweep 2026-10-11T17:35:30Z] qwen3_4b long 1024 at concurrency 4: 1044 prompt tokens, 299.0 out tok/s, ttft 0.292 s
+[sweep 2026-10-11T17:35:49Z] qwen3_4b long 1024 at concurrency 16: 1044 prompt tokens, 867.2 out tok/s, ttft 0.6 s
+[sweep 2026-10-11T17:36:02Z] qwen3_4b long 3072 at concurrency 1: 3105 prompt tokens, 78.6 out tok/s, ttft 0.213 s
+[sweep 2026-10-11T17:36:20Z] qwen3_4b long 3072 at concurrency 4: 3105 prompt tokens, 240.6 out tok/s, ttft 0.632 s
+[sweep 2026-10-11T17:37:04Z] qwen3_4b long 3072 at concurrency 16: 3105 prompt tokens, 373.2 out tok/s, ttft 1.61 s
+[sweep 2026-10-11T17:42:23Z] qwen3_4b gsm8k: {"task": "gsm8k", "max_tokens": 2048, "n": 1319, "right": 1207, "accuracy": 0.9151, "errors": 0, "truncated": 0, "wall_s": 313.8}
+[sweep 2026-10-11T17:42:45Z] qwen3_4b bfcl_simple: {"task": "bfcl_simple", "max_tokens": 512, "n": 400, "right": 376, "accuracy": 0.94, "errors": 0, "truncated": 0, "wall_s": 21.9}
+[sweep 2026-10-11T17:43:00Z] serving Qwen/Qwen3-1.7B as qwen3_1p7b (load+long+gen, parser=hermes,nothink)
+READY Qwen/Qwen3-1.7B after 195s
+[sweep 2026-10-11T17:46:16Z] READY Qwen/Qwen3-1.7B after 195s
+[sweep 2026-10-11T17:46:21Z] qwen3_1p7b load at concurrency 1: 193.3 tok/s, range 193.2 to 193.3
+[sweep 2026-10-11T17:46:27Z] qwen3_1p7b load at concurrency 4: 701.8 tok/s, range 701.7 to 701.9
+[sweep 2026-10-11T17:46:36Z] qwen3_1p7b load at concurrency 16: 2048.9 tok/s, range 2048.7 to 2049.1
+[sweep 2026-10-11T17:46:47Z] qwen3_1p7b long 1024 at concurrency 1: 1044 prompt tokens, 183.0 out tok/s, ttft 0.047 s
+[sweep 2026-10-11T17:46:54Z] qwen3_1p7b long 1024 at concurrency 4: 1044 prompt tokens, 630.5 out tok/s, ttft 0.129 s
+[sweep 2026-10-11T17:47:04Z] qwen3_1p7b long 1024 at concurrency 16: 1044 prompt tokens, 1683.4 out tok/s, ttft 0.265 s
+[sweep 2026-10-11T17:47:10Z] qwen3_1p7b long 3072 at concurrency 1: 3105 prompt tokens, 167.6 out tok/s, ttft 0.097 s
+[sweep 2026-10-11T17:47:19Z] qwen3_1p7b long 3072 at concurrency 4: 3105 prompt tokens, 483.0 out tok/s, ttft 0.274 s
+[sweep 2026-10-11T17:47:36Z] qwen3_1p7b long 3072 at concurrency 16: 3105 prompt tokens, 926.5 out tok/s, ttft 0.696 s
+[sweep 2026-10-11T17:50:37Z] qwen3_1p7b gsm8k: {"task": "gsm8k", "max_tokens": 2048, "n": 1319, "right": 1091, "accuracy": 0.8271, "errors": 0, "truncated": 4, "wall_s": 174.6}
+[sweep 2026-10-11T17:50:46Z] qwen3_1p7b bfcl_simple: {"task": "bfcl_simple", "max_tokens": 512, "n": 400, "right": 374, "accuracy": 0.935, "errors": 0, "truncated": 0, "wall_s": 9.9}
+[sweep 2026-10-11T17:51:01Z] serving Qwen/Qwen3-0.6B as qwen3_0p6b (load+long+gen, parser=hermes,nothink)
+READY Qwen/Qwen3-0.6B after 195s
+[sweep 2026-10-11T17:54:17Z] READY Qwen/Qwen3-0.6B after 195s
+[sweep 2026-10-11T17:54:20Z] qwen3_0p6b load at concurrency 1: 288.2 tok/s, range 288.1 to 288.4
+[sweep 2026-10-11T17:54:24Z] qwen3_0p6b load at concurrency 4: 1110.6 tok/s, range 1106.6 to 1112.4
+[sweep 2026-10-11T17:54:29Z] qwen3_0p6b load at concurrency 16: 3210.2 tok/s, range 3207.0 to 3210.3
+[sweep 2026-10-11T17:54:39Z] qwen3_0p6b long 1024 at concurrency 1: 1044 prompt tokens, 292.3 out tok/s, ttft 0.025 s
+[sweep 2026-10-11T17:54:43Z] qwen3_0p6b long 1024 at concurrency 4: 1044 prompt tokens, 1048.9 out tok/s, ttft 0.063 s
+[sweep 2026-10-11T17:54:49Z] qwen3_0p6b long 1024 at concurrency 16: 1044 prompt tokens, 2698.1 out tok/s, ttft 0.132 s
+[sweep 2026-10-11T17:54:53Z] qwen3_0p6b long 3072 at concurrency 1: 3105 prompt tokens, 286.2 out tok/s, ttft 0.052 s
+[sweep 2026-10-11T17:54:58Z] qwen3_0p6b long 3072 at concurrency 4: 3105 prompt tokens, 819.7 out tok/s, ttft 0.141 s
+[sweep 2026-10-11T17:55:11Z] qwen3_0p6b long 3072 at concurrency 16: 3105 prompt tokens, 1301.4 out tok/s, ttft 0.36 s
+[sweep 2026-10-11T17:56:51Z] qwen3_0p6b gsm8k: {"task": "gsm8k", "max_tokens": 2048, "n": 1319, "right": 790, "accuracy": 0.5989, "errors": 0, "truncated": 2, "wall_s": 93.7}
+[sweep 2026-10-11T17:56:56Z] qwen3_0p6b bfcl_simple: {"task": "bfcl_simple", "max_tokens": 512, "n": 400, "right": 330, "accuracy": 0.825, "errors": 0, "truncated": 0, "wall_s": 5.7}
+[sweep 2026-10-11T17:57:11Z] serving Qwen/Qwen2.5-1.5B-Instruct as qwen25_1p5b (load+long+gen, parser=hermes)
+READY Qwen/Qwen2.5-1.5B-Instruct after 165s
+[sweep 2026-10-11T17:59:56Z] READY Qwen/Qwen2.5-1.5B-Instruct after 165s
+[sweep 2026-10-11T18:00:01Z] qwen25_1p5b load at concurrency 1: 224.0 tok/s, range 223.9 to 224.0
+[sweep 2026-10-11T18:00:06Z] qwen25_1p5b load at concurrency 4: 852.6 tok/s, range 852.4 to 852.7
+[sweep 2026-10-11T18:00:12Z] qwen25_1p5b load at concurrency 16: 2779.7 tok/s, range 2775.7 to 2853.2
+[sweep 2026-10-11T18:00:23Z] qwen25_1p5b long 1024 at concurrency 1: 1061 prompt tokens, 216.1 out tok/s, ttft 0.043 s
+[sweep 2026-10-11T18:00:28Z] qwen25_1p5b long 1024 at concurrency 4: 1061 prompt tokens, 781.3 out tok/s, ttft 0.115 s
+[sweep 2026-10-11T18:00:35Z] qwen25_1p5b long 1024 at concurrency 16: 1061 prompt tokens, 2362.7 out tok/s, ttft 0.23 s
+[sweep 2026-10-11T18:00:40Z] qwen25_1p5b long 3072 at concurrency 1: 3122 prompt tokens, 205.2 out tok/s, ttft 0.087 s
+[sweep 2026-10-11T18:00:47Z] qwen25_1p5b long 3072 at concurrency 4: 3122 prompt tokens, 667.9 out tok/s, ttft 0.24 s
+[sweep 2026-10-11T18:00:57Z] qwen25_1p5b long 3072 at concurrency 16: 3122 prompt tokens, 1569.9 out tok/s, ttft 0.592 s
+[sweep 2026-10-11T18:03:21Z] qwen25_1p5b gsm8k: {"task": "gsm8k", "max_tokens": 2048, "n": 1319, "right": 962, "accuracy": 0.7293, "errors": 0, "truncated": 8, "wall_s": 137.6}
+[sweep 2026-10-11T18:03:28Z] qwen25_1p5b bfcl_simple: {"task": "bfcl_simple", "max_tokens": 512, "n": 400, "right": 364, "accuracy": 0.91, "errors": 0, "truncated": 0, "wall_s": 7.6}
+[sweep 2026-10-11T18:03:43Z] serving Qwen/Qwen2.5-0.5B-Instruct as qwen25_0p5b (load+long+gen, parser=hermes)
+READY Qwen/Qwen2.5-0.5B-Instruct after 180s
+[sweep 2026-10-11T18:06:43Z] READY Qwen/Qwen2.5-0.5B-Instruct after 180s
+[sweep 2026-10-11T18:06:47Z] qwen25_0p5b load at concurrency 1: 308.1 tok/s, range 298.7 to 308.9
+[sweep 2026-10-11T18:06:50Z] qwen25_0p5b load at concurrency 4: 1155.5 tok/s, range 1150.9 to 1182.1
+[sweep 2026-10-11T18:06:55Z] qwen25_0p5b load at concurrency 16: 4175.5 tok/s, range 3993.7 to 4186.4
+[sweep 2026-10-11T18:07:04Z] qwen25_0p5b long 1024 at concurrency 1: 1061 prompt tokens, 294.6 out tok/s, ttft 0.026 s
+[sweep 2026-10-11T18:07:08Z] qwen25_0p5b long 1024 at concurrency 4: 1061 prompt tokens, 1089.0 out tok/s, ttft 0.07 s
+[sweep 2026-10-11T18:07:13Z] qwen25_0p5b long 1024 at concurrency 16: 1061 prompt tokens, 3401.7 out tok/s, ttft 0.153 s
+[sweep 2026-10-11T18:07:17Z] qwen25_0p5b long 3072 at concurrency 1: 3122 prompt tokens, 282.0 out tok/s, ttft 0.054 s
+[sweep 2026-10-11T18:07:21Z] qwen25_0p5b long 3072 at concurrency 4: 3122 prompt tokens, 987.4 out tok/s, ttft 0.151 s
+[sweep 2026-10-11T18:07:28Z] qwen25_0p5b long 3072 at concurrency 16: 3122 prompt tokens, 2596.3 out tok/s, ttft 0.367 s
+[sweep 2026-10-11T18:09:22Z] qwen25_0p5b gsm8k: {"task": "gsm8k", "max_tokens": 2048, "n": 1319, "right": 618, "accuracy": 0.4685, "errors": 0, "truncated": 24, "wall_s": 109.0}
+[sweep 2026-10-11T18:09:27Z] qwen25_0p5b bfcl_simple: {"task": "bfcl_simple", "max_tokens": 512, "n": 400, "right": 327, "accuracy": 0.8175, "errors": 0, "truncated": 0, "wall_s": 4.9}
+[sweep 2026-10-11T18:09:41Z] serving HuggingFaceTB/SmolLM2-1.7B-Instruct as smollm2_1p7b (load+long+gen)
+READY HuggingFaceTB/SmolLM2-1.7B-Instruct after 376s
+[sweep 2026-10-11T18:15:57Z] READY HuggingFaceTB/SmolLM2-1.7B-Instruct after 376s
+[sweep 2026-10-11T18:16:03Z] smollm2_1p7b load at concurrency 1: 173.4 tok/s, range 173.3 to 173.4
+[sweep 2026-10-11T18:16:11Z] smollm2_1p7b load at concurrency 4: 537.4 tok/s, range 537.2 to 537.4
+[sweep 2026-10-11T18:16:25Z] smollm2_1p7b load at concurrency 16: 1183.8 tok/s, range 1171.8 to 1184.2
+[sweep 2026-10-11T18:16:37Z] smollm2_1p7b long 1024 at concurrency 1: 1051 prompt tokens, 163.0 out tok/s, ttft 0.075 s
+[sweep 2026-10-11T18:16:46Z] smollm2_1p7b long 1024 at concurrency 4: 1051 prompt tokens, 474.5 out tok/s, ttft 0.234 s
+[sweep 2026-10-11T18:17:03Z] smollm2_1p7b long 1024 at concurrency 16: 1051 prompt tokens, 966.5 out tok/s, ttft 0.532 s
+[sweep 2026-10-11T18:17:11Z] smollm2_1p7b long 3072 at concurrency 1: 3124 prompt tokens, 137.8 out tok/s, ttft 0.187 s
+[sweep 2026-10-11T18:17:24Z] smollm2_1p7b long 3072 at concurrency 4: 3124 prompt tokens, 323.7 out tok/s, ttft 0.607 s
+[sweep 2026-10-11T18:17:57Z] smollm2_1p7b long 3072 at concurrency 16: 3124 prompt tokens, 495.9 out tok/s, ttft 1.65 s
+[sweep 2026-10-11T18:22:54Z] smollm2_1p7b gsm8k: {"task": "gsm8k", "max_tokens": 2048, "n": 1319, "right": 608, "accuracy": 0.461, "errors": 0, "truncated": 20, "wall_s": 291.5}
+[sweep 2026-10-11T18:23:09Z] serving deepseek-ai/DeepSeek-R1-Distill-Qwen-1.5B as r1distill_1p5b (load+long+gen)
+FAILED deepseek-ai/DeepSeek-R1-Distill-Qwen-1.5B (exited) after 75s: AttributeError: 'Qwen2Config' object has no attribute 'text_config'. Did you mean: 'get_text_config'?
+[sweep 2026-10-11T18:24:24Z] FAILED deepseek-ai/DeepSeek-R1-Distill-Qwen-1.5B (exited) after 75s: AttributeError: 'Qwen2Config' object has no attribute 'text_config'. Did you mean: 'get_text_config'?
+[sweep 2026-10-11T18:24:24Z] r1distill_1p5b host memory at the end: 18:24:09 used 2862 avail 44698; kernel OOM lines: 0
+[sweep 2026-10-11T18:24:30Z] DONE: all arms attempted
+Delete request issued for: [ms-2026-10-11-v5e1-tier1-1712]
+Check operation [projects/aisprint-491218/locations/us-west4-a/operations/operation-1791743077055-65d94b1a2fd77-beff6b90-e7da3257] for status.

@@ -112,7 +112,7 @@ try_arm() {  # try_arm <model> <tag> <modes> [flags]
     log "$tag host memory at the end: $(tail -1 $L/$tag.hostmem.txt); kernel OOM lines: $(wc -l < $L/$tag.oom.txt)"
   fi
   kill $memlog 2>/dev/null
-  cp "$L/$(echo "$model" | tr '/' '_').boot.log" "$L/$tag.boot.log" 2>/dev/null
+  mv "$L/$(echo "$model" | tr '/' '_').boot.log" "$L/$tag.boot.log" 2>/dev/null
   docker rm -f vllm >/dev/null 2>&1; rm -rf /dev/shm/hf; sync_up
 }
 

@@ -1,0 +1,44 @@
+{
+ "model": "google/gemma-4-E2B-it",
+ "concurrency": 16,
+ "max_tokens": 256,
+ "ignore_eos": true,
+ "repeats": 3,
+ "target_input_tokens": 3072,
+ "prompt_tokens_per_request": 3104,
+ "unique_prefix_per_request": true,
+ "passes": [
+  {
+   "wall_s": 3.907,
+   "prompt_tokens": 49670,
+   "completion_tokens": 4096,
+   "output_tok_per_s": 1048.4,
+   "total_tok_per_s": 13762.4,
+   "ttft_median_s": 0.865,
+   "ttft_max_s": 1.438
+  },
+  {
+   "wall_s": 3.906,
+   "prompt_tokens": 49670,
+   "completion_tokens": 4096,
+   "output_tok_per_s": 1048.7,
+   "total_tok_per_s": 13766.0,
+   "ttft_median_s": 0.865,
+   "ttft_max_s": 1.438
+  },
+  {
+   "wall_s": 3.88,
+   "prompt_tokens": 49670,
+   "completion_tokens": 4096,
+   "output_tok_per_s": 1055.6,
+   "total_tok_per_s": 13856.1,
+   "ttft_median_s": 0.81,
+   "ttft_max_s": 1.414
+  }
+ ],
+ "output_tok_per_s": 1048.7,
+ "output_tok_per_s_min": 1048.4,
+ "output_tok_per_s_max": 1055.6,
+ "total_tok_per_s": 13766.0,
+ "ttft_median_s": 0.865
+}

@@ -1,0 +1,44 @@
+{
+ "model": "Qwen/Qwen3-4B",
+ "concurrency": 4,
+ "max_tokens": 256,
+ "ignore_eos": true,
+ "repeats": 3,
+ "target_input_tokens": 1024,
+ "prompt_tokens_per_request": 1044,
+ "unique_prefix_per_request": true,
+ "passes": [
+  {
+   "wall_s": 3.424,
+   "prompt_tokens": 4176,
+   "completion_tokens": 1024,
+   "output_tok_per_s": 299.0,
+   "total_tok_per_s": 1518.6,
+   "ttft_median_s": 0.292,
+   "ttft_max_s": 0.306
+  },
+  {
+   "wall_s": 3.426,
+   "prompt_tokens": 4176,
+   "completion_tokens": 1024,
+   "output_tok_per_s": 298.9,
+   "total_tok_per_s": 1517.8,
+   "ttft_median_s": 0.292,
+   "ttft_max_s": 0.306
+  },
+  {
+   "wall_s": 3.424,
+   "prompt_tokens": 4176,
+   "completion_tokens": 1024,
+   "output_tok_per_s": 299.1,
+   "total_tok_per_s": 1518.7,
+   "ttft_median_s": 0.292,
+   "ttft_max_s": 0.306
+  }
+ ],
+ "output_tok_per_s": 299.0,
+ "output_tok_per_s_min": 298.9,
+ "output_tok_per_s_max": 299.1,
+ "total_tok_per_s": 1518.6,
+ "ttft_median_s": 0.292
+}
