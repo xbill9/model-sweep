@@ -1,0 +1,10 @@
+# Tier 2: torchax fallback, untested on TPU upstream (LINEUP.md). Same modes as tier 1 so the results compare.
+# Plain transformers first, then the multimodal and hybrid-attention checkpoints least likely to load.
+# Parsers are the ones each model card names, or vLLM's parser for the family where the card names none.
+HuggingFaceTB/SmolLM3-3B=smollm3_3b=load+long+gen=parser=hermes,nothink
+microsoft/Phi-4-mini-instruct=phi4mini_3p8b=load+long+gen=parser=phi4_mini_json
+ibm-granite/granite-3.3-2b-instruct=granite33_2b=load+long+gen=parser=granite
+allenai/OLMo-2-0425-1B-Instruct=olmo2_1b=load+long+gen
+mistralai/Ministral-3-3B-Instruct-2512-BF16=ministral3_3b=load+long+gen=parser=mistral,mm=image
+Qwen/Qwen3.5-2B=qwen35_2b=load+long+gen=parser=qwen3_coder,nothink,mm=image+video
+Qwen/Qwen3.5-0.8B=qwen35_0p8b=load+long+gen=parser=qwen3_coder,nothink,mm=image+video

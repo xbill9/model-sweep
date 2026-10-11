@@ -14,6 +14,14 @@ the model family added to slot 4 (`NAMING.md`).
   `~/gemma4-dev`.
 - `LINEUP.md` is generated. Do not hand-edit it; change `LINEUP` or `HARDWARE` in `survey.py` and rerun it.
 - `NAMING.md` explains how slot 4 differs from `~/gemma4-dev/NAMING.md`.
+- `tpu/` is the v5e-1 sweep harness, ported from `~/gemma4-dev/jev-tpu-v5e1/tpu/run_quant.sh`:
+  `launch.sh` bundles the committed tree and creates a flex-start queued resource; on the VM `startup.sh`
+  runs `run_sweep.sh`, which serves each arm through `serve.sh`, measures it, uploads, and deletes the queued
+  resource. `sweep.env` holds every cloud value and the pinned image. `arms-v5e1-tier1.txt` and
+  `arms-v5e1-tier2.txt` are the two runs.
+- `gen_eval.py` (GSM8K and BFCL simple, scored in code) and `tpu/load_client.py` (fixed-work throughput,
+  long prompts) come from `~/gemma4-dev/jev-tpu-v5e1` at `b584cd5`, with `data/` pinned by hash in
+  `data/gen_manifest.json`.
 - `<platform>-vllm-<hardware>-<family>_<size>/benchmarks/runs/` is where each finished arm is filed. Those
   directories are created when an arm is filed, the same way `~/gemma4-dev/jev-tpu-v5e1` files its arms.
 
@@ -41,8 +49,33 @@ Gemma 4 E2B is labelled 2B, but it holds 5.12B parameters and 9.54 GiB of 16-bit
 per-layer embeddings. By resident bytes its nearest neighbour in the lineup is Qwen3-4B (7.49 GiB). By the
 size on the label, it is Qwen3-1.7B and SmolLM2-1.7B. Report both comparisons.
 
+#### Method
+
+Every arm in a run serves the same pinned image (`tpu/sweep.env`) with the same `--max-model-len 4096` and
+`--max-num-seqs 16`, because attention cost on this chip follows `--max-model-len`. Each arm measures:
+
+- **load:** 256 output tokens per request with `ignore_eos`, so every model does the same work, at 1, 4 and
+  16 requests at once.
+- **long:** the same with 1,024- and 3,072-token prompts, each with a unique prefix so the prefix cache never
+  serves one.
+- **gen:** GSM8K (1,319 problems, greedy, 2,048-token answer limit) and, where the model has a tool-call
+  format vLLM parses, BFCL simple (400 records). Qwen3, Qwen3.5 and SmolLM3 run with thinking off
+  (`enable_thinking: false`), so GSM8K compares answers without hidden reasoning. R1-Distill has no switch
+  and reasons inside the same limit.
+
+The model's Hugging Face commit is recorded per arm in `logs/<tag>.meta.json`.
+
+#### Running it
+
+```shell
+tpu/launch.sh arms-v5e1-tier1.txt          # dry run: prints the bundle, the run and the create command
+tpu/launch.sh arms-v5e1-tier1.txt --go     # uploads and creates the queued resource
+```
+
+Results and logs land in `gs://aisprint-491218-bucket/model-sweep/<run>/`. The queued resource deletes
+itself after the last arm, or at the 4-hour limit. Launch tier 2 as a second run.
+
 #### Status
 
-Nothing has provisioned. Next: port `~/gemma4-dev/jev-tpu-v5e1/tpu/run_quant.sh` (several arms on one
-queued resource, then self-delete) to serve the v5e lineup, using the flex-start `v5litepod-1` path in
-`us-west4-a`.
+Nothing has provisioned. `run_sweep.sh` has run end to end only against stubbed `gcloud`, `docker` and
+metadata.

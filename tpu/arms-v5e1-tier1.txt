@@ -1,0 +1,12 @@
+# Tier 1: native JAX model in tpu_inference (LINEUP.md). <MODEL_NAME>=<tag>=<modes>[=<flags>], see run_sweep.sh.
+# Gemma 4 E2B first: it is the baseline, and it is the arm known to serve on this image and chip.
+google/gemma-4-E2B-it=gemma4_2b=load+long+gen=parser=gemma4,mm=image+audio+video
+Qwen/Qwen3-4B=qwen3_4b=load+long+gen=parser=hermes,nothink
+Qwen/Qwen3-1.7B=qwen3_1p7b=load+long+gen=parser=hermes,nothink
+Qwen/Qwen3-0.6B=qwen3_0p6b=load+long+gen=parser=hermes,nothink
+Qwen/Qwen2.5-1.5B-Instruct=qwen25_1p5b=load+long+gen=parser=hermes
+Qwen/Qwen2.5-0.5B-Instruct=qwen25_0p5b=load+long+gen=parser=hermes
+# No tool-call format on these two, so gen runs GSM8K only. R1-Distill always reasons before answering, so
+# its GSM8K score is at the same 2,048-token limit as everyone else's, truncation included.
+HuggingFaceTB/SmolLM2-1.7B-Instruct=smollm2_1p7b=load+long+gen
+deepseek-ai/DeepSeek-R1-Distill-Qwen-1.5B=r1distill_1p5b=load+long+gen

@@ -16,4 +16,10 @@ EC2 G6 and G5g), with Gemma 4 E2B as the baseline. Read `README.md` first.
   (`~/gemma4-dev/CLAUDE.md`, "Cloud gotchas"). Don't destroy a queued resource unless asked.
 - **Never pair a number across images.** Every arm in one comparison runs on the same `vllm-tpu` digest; record
   the digest with each run. `nightly` moves.
-- Use the system `python3`; never create a virtualenv. Tests are `unittest`.
+- **The harness is `tpu/`** (README, "Running it"). `launch.sh` builds the bundle from `HEAD`, so commit
+  before launching; it refuses a dirty tree and failing tests. Without `--go` it creates nothing. A launch
+  spends money: confirm with the user first.
+- **Arms files are checked by `tests/test_arms.py`** against `survey.LINEUP` and the tool parsers registered
+  in the pinned image's vLLM. Changing the image means re-checking that parser list.
+- Use the system `python3`; never create a virtualenv. Tests are `unittest`:
+  `python3 -m unittest discover -s tests -v`.
