@@ -73,7 +73,7 @@ tpu/launch.sh arms-v5e1-tier1.txt --go     # uploads and creates the queued reso
 ```
 
 Results and logs land in `gs://aisprint-491218-bucket/model-sweep/<run>/`. The queued resource deletes
-itself after the last arm, or at the 4-hour limit. Launch tier 2 as a second run.
+itself after the last arm, or at the 4-hour limit. Each tier is its own run.
 
 #### Results
 
@@ -97,4 +97,21 @@ holds the per-arm logs and the scored GSM8K and BFCL records.
   on `text_config`. The Qwen2.5 checkpoints here tie their embeddings and load. Upstream `main` still has the
   line (5454f2b23, 2026-10-11).
 
-Tier 2 (`arms-v5e1-tier2.txt`) has not run.
+**`2026-10-12-v5e1-tier2`**: 6 of 7 arms served, on the same image digest as tier 1, so the ratios pair with
+tier 1's Gemma arm (`results/2026-10-12-v5e1-tier2/REPORT.md`, `--baseline-run 2026-10-11-v5e1-tier1`).
+
+- 🟢 **SmolLM3-3B is level with Gemma on BFCL** (+1.7, −1.0 to +4.8) and 5.3 points lower on GSM8K (−7.2 to
+  −3.5), at 0.76x Gemma's output and 0.69x with 3,072-token prompts.
+- 🟢 **Granite 3.3 2B serves 0.93x Gemma's output** and is level on BFCL (−0.7, −3.8 to +2.2); GSM8K is 9.5
+  points lower (−11.6 to −7.4).
+- ⚠️ **Phi-4-mini is 1.6 points under Gemma on GSM8K** (−3.2 to −0.1) at 0.60x the output. Its BFCL score
+  of 0 is a request-format result: every answer is prose, and the `phi4_mini_json` parser found no call.
+- ⚠️ **Ministral 3 3B** answered 66 GSM8K and 104 BFCL requests with HTTP 500, and serves 0.33x Gemma's
+  output. Its accuracy figures cover the requests that returned.
+- ❌ **Qwen3.5-2B and Qwen3.5-0.8B produce degenerate text on this image** (GSM8K 0.009 and 0.011, nearly
+  every answer at the 2,048-token limit, digits repeating). Their throughput rows measure that text and do
+  not describe the models.
+- ❌ **OLMo 2 1B does not compile**: XLA asks for 133.56 MB of the chip's 128 MB vector memory.
+- **Every standard-attention model from 1.7B up trails Gemma once prompts are long** (0.36x to 0.88x at 16 ×
+  3,072 tokens; the 0.5B to 1.5B models run ahead). Gemma's shared KV layers give it 321,280 cache tokens in the same HBM; SmolLM3 has 120,320,
+  Granite 125,184.

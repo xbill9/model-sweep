@@ -1,0 +1,44 @@
+{
+ "model": "mistralai/Ministral-3-3B-Instruct-2512-BF16",
+ "concurrency": 16,
+ "max_tokens": 256,
+ "ignore_eos": true,
+ "repeats": 3,
+ "target_input_tokens": 1024,
+ "prompt_tokens_per_request": 1062,
+ "unique_prefix_per_request": true,
+ "passes": [
+  {
+   "wall_s": 8.714,
+   "prompt_tokens": 16998,
+   "completion_tokens": 4096,
+   "output_tok_per_s": 470.1,
+   "total_tok_per_s": 2420.8,
+   "ttft_median_s": 5.057,
+   "ttft_max_s": 5.773
+  },
+  {
+   "wall_s": 8.709,
+   "prompt_tokens": 16998,
+   "completion_tokens": 4096,
+   "output_tok_per_s": 470.3,
+   "total_tok_per_s": 2422.1,
+   "ttft_median_s": 5.049,
+   "ttft_max_s": 5.773
+  },
+  {
+   "wall_s": 8.717,
+   "prompt_tokens": 16998,
+   "completion_tokens": 4096,
+   "output_tok_per_s": 469.9,
+   "total_tok_per_s": 2420.0,
+   "ttft_median_s": 4.788,
+   "ttft_max_s": 5.769
+  }
+ ],
+ "output_tok_per_s": 470.1,
+ "output_tok_per_s_min": 469.9,
+ "output_tok_per_s_max": 470.3,
+ "total_tok_per_s": 2420.8,
+ "ttft_median_s": 5.049
+}

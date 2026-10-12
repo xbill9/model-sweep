@@ -1,0 +1,28 @@
+{
+ "model": "microsoft/Phi-4-mini-instruct",
+ "concurrency": 1,
+ "max_tokens": 256,
+ "ignore_eos": true,
+ "repeats": 3,
+ "passes": [
+  {
+   "wall_s": 2.823,
+   "completion_tokens": 256,
+   "output_tok_per_s": 90.7
+  },
+  {
+   "wall_s": 2.816,
+   "completion_tokens": 256,
+   "output_tok_per_s": 90.9
+  },
+  {
+   "wall_s": 2.822,
+   "completion_tokens": 256,
+   "output_tok_per_s": 90.7
+  }
+ ],
+ "prompt_tokens": 20,
+ "output_tok_per_s": 90.7,
+ "output_tok_per_s_min": 90.7,
+ "output_tok_per_s_max": 90.9
+}

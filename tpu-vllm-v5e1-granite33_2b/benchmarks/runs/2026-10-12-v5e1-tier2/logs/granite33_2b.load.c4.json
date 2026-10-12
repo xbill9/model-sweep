@@ -1,0 +1,28 @@
+{
+ "model": "ibm-granite/granite-3.3-2b-instruct",
+ "concurrency": 4,
+ "max_tokens": 256,
+ "ignore_eos": true,
+ "repeats": 3,
+ "passes": [
+  {
+   "wall_s": 1.925,
+   "completion_tokens": 1024,
+   "output_tok_per_s": 532.0
+  },
+  {
+   "wall_s": 1.924,
+   "completion_tokens": 1024,
+   "output_tok_per_s": 532.1
+  },
+  {
+   "wall_s": 1.924,
+   "completion_tokens": 1024,
+   "output_tok_per_s": 532.1
+  }
+ ],
+ "prompt_tokens": 311,
+ "output_tok_per_s": 532.1,
+ "output_tok_per_s_min": 532.0,
+ "output_tok_per_s_max": 532.1
+}

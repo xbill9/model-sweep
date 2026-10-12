@@ -1,0 +1,28 @@
+{
+ "model": "mistralai/Ministral-3-3B-Instruct-2512-BF16",
+ "concurrency": 1,
+ "max_tokens": 256,
+ "ignore_eos": true,
+ "repeats": 3,
+ "passes": [
+  {
+   "wall_s": 2.729,
+   "completion_tokens": 256,
+   "output_tok_per_s": 93.8
+  },
+  {
+   "wall_s": 2.724,
+   "completion_tokens": 256,
+   "output_tok_per_s": 94.0
+  },
+  {
+   "wall_s": 2.725,
+   "completion_tokens": 256,
+   "output_tok_per_s": 93.9
+  }
+ ],
+ "prompt_tokens": 20,
+ "output_tok_per_s": 93.9,
+ "output_tok_per_s_min": 93.8,
+ "output_tok_per_s_max": 94.0
+}

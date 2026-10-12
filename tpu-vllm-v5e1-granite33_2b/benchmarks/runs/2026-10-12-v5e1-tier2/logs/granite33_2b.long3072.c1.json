@@ -1,0 +1,44 @@
+{
+ "model": "ibm-granite/granite-3.3-2b-instruct",
+ "concurrency": 1,
+ "max_tokens": 256,
+ "ignore_eos": true,
+ "repeats": 3,
+ "target_input_tokens": 3072,
+ "prompt_tokens_per_request": 3107,
+ "unique_prefix_per_request": true,
+ "passes": [
+  {
+   "wall_s": 2.071,
+   "prompt_tokens": 3107,
+   "completion_tokens": 256,
+   "output_tok_per_s": 123.6,
+   "total_tok_per_s": 1623.7,
+   "ttft_median_s": 0.179,
+   "ttft_max_s": 0.179
+  },
+  {
+   "wall_s": 2.071,
+   "prompt_tokens": 3107,
+   "completion_tokens": 256,
+   "output_tok_per_s": 123.6,
+   "total_tok_per_s": 1623.6,
+   "ttft_median_s": 0.179,
+   "ttft_max_s": 0.179
+  },
+  {
+   "wall_s": 2.072,
+   "prompt_tokens": 3107,
+   "completion_tokens": 256,
+   "output_tok_per_s": 123.6,
+   "total_tok_per_s": 1623.4,
+   "ttft_median_s": 0.179,
+   "ttft_max_s": 0.179
+  }
+ ],
+ "output_tok_per_s": 123.6,
+ "output_tok_per_s_min": 123.6,
+ "output_tok_per_s_max": 123.6,
+ "total_tok_per_s": 1623.6,
+ "ttft_median_s": 0.179
+}

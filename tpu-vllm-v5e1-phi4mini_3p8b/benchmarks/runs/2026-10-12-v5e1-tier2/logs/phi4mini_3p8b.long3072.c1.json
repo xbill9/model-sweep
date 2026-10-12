@@ -1,0 +1,44 @@
+{
+ "model": "microsoft/Phi-4-mini-instruct",
+ "concurrency": 1,
+ "max_tokens": 256,
+ "ignore_eos": true,
+ "repeats": 3,
+ "target_input_tokens": 3072,
+ "prompt_tokens_per_request": 3073,
+ "unique_prefix_per_request": true,
+ "passes": [
+  {
+   "wall_s": 3.143,
+   "prompt_tokens": 3073,
+   "completion_tokens": 256,
+   "output_tok_per_s": 81.5,
+   "total_tok_per_s": 1059.2,
+   "ttft_median_s": 0.204,
+   "ttft_max_s": 0.204
+  },
+  {
+   "wall_s": 3.142,
+   "prompt_tokens": 3073,
+   "completion_tokens": 256,
+   "output_tok_per_s": 81.5,
+   "total_tok_per_s": 1059.4,
+   "ttft_median_s": 0.204,
+   "ttft_max_s": 0.204
+  },
+  {
+   "wall_s": 3.142,
+   "prompt_tokens": 3073,
+   "completion_tokens": 256,
+   "output_tok_per_s": 81.5,
+   "total_tok_per_s": 1059.5,
+   "ttft_median_s": 0.204,
+   "ttft_max_s": 0.204
+  }
+ ],
+ "output_tok_per_s": 81.5,
+ "output_tok_per_s_min": 81.5,
+ "output_tok_per_s_max": 81.5,
+ "total_tok_per_s": 1059.4,
+ "ttft_median_s": 0.204
+}

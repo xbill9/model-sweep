@@ -1,0 +1,4 @@
+ERROR 10-12 13:53:34 [tpu_info.py:91] Failed to detect number of TPUs: [Errno 2] No such file or directory: '/dev/vfio'
+INFO 10-12 13:53:34 [__init__.py:75] TPU info: node_name=ms-2026-10-12-v5e1-tier2-1349-node | tpu_type=v5litepod-1 | worker_id=0 | num_chips=0 | num_cores_per_chip=1
+WARNING 10-12 13:53:35 [tpu_platform.py:543] Pin memory is not supported on TPU.
+vllm 0.29.1rc1.dev468+g0b7f11a1e
