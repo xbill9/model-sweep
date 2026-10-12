@@ -1,0 +1,5 @@
+{"model": "google/gemma-4-E2B-it", "head_dim": 256, "global_head_dim": 512, "hidden_size": 1536, "num_attention_heads": 8, "num_key_value_heads": 1, "num_hidden_layers": 35, "num_kv_shared_layers": 20, "sliding_window": 512}
+{"model": "HuggingFaceTB/SmolLM3-3B", "hidden_size": 2048, "num_attention_heads": 16, "num_key_value_heads": 4, "num_hidden_layers": 36, "sliding_window": null}
+{"model": "ibm-granite/granite-3.3-2b-instruct", "hidden_size": 2048, "num_attention_heads": 32, "num_key_value_heads": 8, "num_hidden_layers": 40}
+{"model": "Qwen/Qwen3-1.7B", "head_dim": 128, "hidden_size": 2048, "num_attention_heads": 16, "num_key_value_heads": 8, "num_hidden_layers": 28, "sliding_window": null}
+{"model": "Qwen/Qwen3-4B", "head_dim": 128, "hidden_size": 2560, "num_attention_heads": 32, "num_key_value_heads": 8, "num_hidden_layers": 36, "sliding_window": null}

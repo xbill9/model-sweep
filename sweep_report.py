@@ -135,16 +135,17 @@ def report(run, baseline, baseline_run=None):
         "",
         "#### Throughput",
         "",
-        "| Rig | Weights GiB | KV tokens | Boot s | 1 req | 4 req | 16 req | 16 req vs base | 16 × 3,072-token prompts | TTFT s |",
-        "|---|---|---|---|---|---|---|---|---|---|",
+        "| Rig | Weights GiB | KV tokens | Boot s | 1 req | 4 req | 16 req | 16 req vs base | 16 × 3,072-token prompts | vs base | TTFT s |",
+        "|---|---|---|---|---|---|---|---|---|---|---|",
     ]
     rows = served if base_run == run else [base] + served
     for a in rows:
         ratio = a["load16"] / base["load16"] if a.get("load16") and base.get("load16") else None
+        lratio = a["long3072_16"] / base["long3072_16"] if a.get("long3072_16") and base.get("long3072_16") else None
         lines.append(
             f"| `{a['rig']}` | {fmt(a.get('weights_gib'), '.2f')} | {fmt(a.get('kv_tokens'), ',')} | {fmt(a.get('boot_s'), 'd')} | "
             f"{fmt(a.get('load1'), '.0f')} | {fmt(a.get('load4'), '.0f')} | {fmt(a.get('load16'), '.0f')} | "
-            f"{fmt(ratio, '.2f')}x | {fmt(a.get('long3072_16'), '.0f')} | {fmt(a.get('ttft3072_16'), '.2f')} |")
+            f"{fmt(ratio, '.2f')}x | {fmt(a.get('long3072_16'), '.0f')} | {fmt(lratio, '.2f')}x | {fmt(a.get('ttft3072_16'), '.2f')} |")
     lines += [
         "",
         "#### Accuracy",

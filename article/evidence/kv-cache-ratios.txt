@@ -1,0 +1,5 @@
+# Gemma 4 E2B KV cache tokens divided by each model's, from the boot logs (generated 2026-10-12)
+granite33_2b 125184 gemma/granite33_2b = 2.6x
+smollm3_3b 120320 gemma/smollm3_3b = 2.7x
+qwen3_1p7b 100096 gemma/qwen3_1p7b = 3.2x
+qwen3_4b 50688 gemma/qwen3_4b = 6.3x
