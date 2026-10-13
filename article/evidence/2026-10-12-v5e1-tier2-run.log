@@ -1,0 +1,95 @@
+[sweep 2026-10-12T13:51:26Z] start 2026-10-12-v5e1-tier2 on us-west4-a, arms arms-v5e1-tier2.txt
+docker.io/vllm/vllm-tpu@sha256:19a1a0526476f902eb83e1057f3d8938f35b457dd7716a30e9ab4f7bee90d507
+[sweep 2026-10-12T13:53:22Z] image vllm/vllm-tpu@sha256:19a1a0526476f902eb83e1057f3d8938f35b457dd7716a30e9ab4f7bee90d507
+[sweep 2026-10-12T13:53:38Z] vllm 0.29.1rc1.dev468+g0b7f11a1e
+[sweep 2026-10-12T13:53:45Z] serving HuggingFaceTB/SmolLM3-3B as smollm3_3b (load+long+gen, parser=hermes,nothink)
+READY HuggingFaceTB/SmolLM3-3B after 270s
+[sweep 2026-10-12T13:58:16Z] READY HuggingFaceTB/SmolLM3-3B after 270s
+[sweep 2026-10-12T13:58:25Z] smollm3_3b load at concurrency 1: 112.2 tok/s, range 112.2 to 112.2
+[sweep 2026-10-12T13:58:35Z] smollm3_3b load at concurrency 4: 427.8 tok/s, range 421.4 to 428.0
+[sweep 2026-10-12T13:58:47Z] smollm3_3b load at concurrency 16: 1439.9 tok/s, range 1438.6 to 1439.9
+[sweep 2026-10-12T13:59:02Z] smollm3_3b long 1024 at concurrency 1: 1038 prompt tokens, 107.7 out tok/s, ttft 0.088 s
+[sweep 2026-10-12T13:59:13Z] smollm3_3b long 1024 at concurrency 4: 1038 prompt tokens, 387.0 out tok/s, ttft 0.252 s
+[sweep 2026-10-12T13:59:27Z] smollm3_3b long 1024 at concurrency 16: 1038 prompt tokens, 1159.5 out tok/s, ttft 0.51 s
+[sweep 2026-10-12T13:59:37Z] smollm3_3b long 3072 at concurrency 1: 3068 prompt tokens, 103.4 out tok/s, ttft 0.139 s
+[sweep 2026-10-12T13:59:50Z] smollm3_3b long 3072 at concurrency 4: 3068 prompt tokens, 330.3 out tok/s, ttft 0.398 s
+[sweep 2026-10-12T14:00:13Z] smollm3_3b long 3072 at concurrency 16: 3068 prompt tokens, 725.2 out tok/s, ttft 1.272 s
+[sweep 2026-10-12T14:03:34Z] smollm3_3b gsm8k: {"task": "gsm8k", "max_tokens": 2048, "n": 1319, "right": 1132, "accuracy": 0.8582, "errors": 0, "truncated": 16, "wall_s": 194.7}
+[sweep 2026-10-12T14:03:49Z] smollm3_3b bfcl_simple: {"task": "bfcl_simple", "max_tokens": 512, "n": 400, "right": 378, "accuracy": 0.945, "errors": 0, "truncated": 0, "wall_s": 15.4}
+[sweep 2026-10-12T14:04:04Z] serving microsoft/Phi-4-mini-instruct as phi4mini_3p8b (load+long+gen, parser=phi4_mini_json)
+READY microsoft/Phi-4-mini-instruct after 361s
+[sweep 2026-10-12T14:10:05Z] READY microsoft/Phi-4-mini-instruct after 361s
+[sweep 2026-10-12T14:10:16Z] phi4mini_3p8b load at concurrency 1: 90.7 tok/s, range 90.7 to 90.9
+[sweep 2026-10-12T14:10:28Z] phi4mini_3p8b load at concurrency 4: 343.4 tok/s, range 343.4 to 343.4
+[sweep 2026-10-12T14:10:43Z] phi4mini_3p8b load at concurrency 16: 1135.9 tok/s, range 1126.2 to 1137.6
+[sweep 2026-10-12T14:11:01Z] phi4mini_3p8b long 1024 at concurrency 1: 1043 prompt tokens, 86.9 out tok/s, ttft 0.097 s
+[sweep 2026-10-12T14:11:14Z] phi4mini_3p8b long 1024 at concurrency 4: 1043 prompt tokens, 310.4 out tok/s, ttft 0.28 s
+[sweep 2026-10-12T14:11:32Z] phi4mini_3p8b long 1024 at concurrency 16: 1043 prompt tokens, 911.4 out tok/s, ttft 0.571 s
+[sweep 2026-10-12T14:11:45Z] phi4mini_3p8b long 3072 at concurrency 1: 3073 prompt tokens, 81.5 out tok/s, ttft 0.204 s
+[sweep 2026-10-12T14:12:01Z] phi4mini_3p8b long 3072 at concurrency 4: 3073 prompt tokens, 252.4 out tok/s, ttft 0.6 s
+[sweep 2026-10-12T14:12:42Z] phi4mini_3p8b long 3072 at concurrency 16: 3073 prompt tokens, 404.1 out tok/s, ttft 1.522 s
+[sweep 2026-10-12T14:16:55Z] phi4mini_3p8b gsm8k: {"task": "gsm8k", "max_tokens": 2048, "n": 1319, "right": 1181, "accuracy": 0.8954, "errors": 0, "truncated": 2, "wall_s": 247.0}
+[sweep 2026-10-12T14:18:12Z] phi4mini_3p8b bfcl_simple: {"task": "bfcl_simple", "max_tokens": 512, "n": 400, "right": 0, "accuracy": 0.0, "errors": 0, "truncated": 34, "wall_s": 76.2}
+[sweep 2026-10-12T14:18:27Z] serving ibm-granite/granite-3.3-2b-instruct as granite33_2b (load+long+gen, parser=granite)
+READY ibm-granite/granite-3.3-2b-instruct after 286s
+[sweep 2026-10-12T14:23:13Z] READY ibm-granite/granite-3.3-2b-instruct after 286s
+[sweep 2026-10-12T14:23:20Z] granite33_2b load at concurrency 1: 140.2 tok/s, range 140.1 to 140.2
+[sweep 2026-10-12T14:23:28Z] granite33_2b load at concurrency 4: 532.1 tok/s, range 532.0 to 532.1
+[sweep 2026-10-12T14:23:38Z] granite33_2b load at concurrency 16: 1760.6 tok/s, range 1736.5 to 1761.2
+[sweep 2026-10-12T14:23:52Z] granite33_2b long 1024 at concurrency 1: 1023 prompt tokens, 135.9 out tok/s, ttft 0.049 s
+[sweep 2026-10-12T14:24:00Z] granite33_2b long 1024 at concurrency 4: 1023 prompt tokens, 477.9 out tok/s, ttft 0.136 s
+[sweep 2026-10-12T14:24:13Z] granite33_2b long 1024 at concurrency 16: 1023 prompt tokens, 1344.1 out tok/s, ttft 0.478 s
+[sweep 2026-10-12T14:24:21Z] granite33_2b long 3072 at concurrency 1: 3107 prompt tokens, 123.6 out tok/s, ttft 0.179 s
+[sweep 2026-10-12T14:24:32Z] granite33_2b long 3072 at concurrency 4: 3107 prompt tokens, 366.0 out tok/s, ttft 0.553 s
+[sweep 2026-10-12T14:24:55Z] granite33_2b long 3072 at concurrency 16: 3107 prompt tokens, 732.3 out tok/s, ttft 1.416 s
+[sweep 2026-10-12T14:28:30Z] granite33_2b gsm8k: {"task": "gsm8k", "max_tokens": 2048, "n": 1319, "right": 1077, "accuracy": 0.8165, "errors": 0, "truncated": 8, "wall_s": 208.7}
+[sweep 2026-10-12T14:28:45Z] granite33_2b bfcl_simple: {"task": "bfcl_simple", "max_tokens": 512, "n": 400, "right": 368, "accuracy": 0.92, "errors": 0, "truncated": 0, "wall_s": 14.9}
+[sweep 2026-10-12T14:28:59Z] serving allenai/OLMo-2-0425-1B-Instruct as olmo2_1b (load+long+gen)
+FAILED allenai/OLMo-2-0425-1B-Instruct (exited) after 255s: jax.errors.JaxRuntimeError: RESOURCE_EXHAUSTED: XLA:TPU compile permanent error. Ran out of memory in memory space vmem. Used 133.56M of 128.00M vmem. Exceeded vmem capacity by 5.56M.
+[sweep 2026-10-12T14:33:15Z] FAILED allenai/OLMo-2-0425-1B-Instruct (exited) after 255s: jax.errors.JaxRuntimeError: RESOURCE_EXHAUSTED: XLA:TPU compile permanent error. Ran out of memory in memory space vmem. Used 133.56M of 128.00M vmem. Exceeded vmem capacity by 5.56M.
+[sweep 2026-10-12T14:33:15Z] olmo2_1b host memory at the end: 14:32:59 used 10978 avail 33748; kernel OOM lines: 0
+[sweep 2026-10-12T14:33:23Z] serving mistralai/Ministral-3-3B-Instruct-2512-BF16 as ministral3_3b (load+long+gen, parser=mistral,mm=image)
+READY mistralai/Ministral-3-3B-Instruct-2512-BF16 after 330s
+[sweep 2026-10-12T14:38:53Z] READY mistralai/Ministral-3-3B-Instruct-2512-BF16 after 330s
+[sweep 2026-10-12T14:39:06Z] ministral3_3b load at concurrency 1: 93.9 tok/s, range 93.8 to 94.0
+[sweep 2026-10-12T14:39:20Z] ministral3_3b load at concurrency 4: 288.9 tok/s, range 288.8 to 289.4
+[sweep 2026-10-12T14:39:47Z] ministral3_3b load at concurrency 16: 614.7 tok/s, range 614.3 to 614.8
+[sweep 2026-10-12T14:40:06Z] ministral3_3b long 1024 at concurrency 1: 1062 prompt tokens, 86.7 out tok/s, ttft 0.44 s
+[sweep 2026-10-12T14:40:23Z] ministral3_3b long 1024 at concurrency 4: 1062 prompt tokens, 248.4 out tok/s, ttft 1.393 s
+[sweep 2026-10-12T14:40:59Z] ministral3_3b long 1024 at concurrency 16: 1062 prompt tokens, 470.1 out tok/s, ttft 5.049 s
+[sweep 2026-10-12T14:41:12Z] ministral3_3b long 3072 at concurrency 1: 3095 prompt tokens, 82.1 out tok/s, ttft 0.531 s
+[sweep 2026-10-12T14:41:31Z] ministral3_3b long 3072 at concurrency 4: 3095 prompt tokens, 223.4 out tok/s, ttft 1.472 s
+[sweep 2026-10-12T14:42:12Z] ministral3_3b long 3072 at concurrency 16: 3095 prompt tokens, 406.0 out tok/s, ttft 5.152 s
+[sweep 2026-10-12T14:48:18Z] ministral3_3b gsm8k: {"task": "gsm8k", "max_tokens": 2048, "n": 1319, "right": 1147, "accuracy": 0.8696, "errors": 66, "truncated": 17, "wall_s": 360.3}
+[sweep 2026-10-12T14:49:56Z] ministral3_3b bfcl_simple: {"task": "bfcl_simple", "max_tokens": 512, "n": 400, "right": 234, "accuracy": 0.585, "errors": 104, "truncated": 0, "wall_s": 97.2}
+[sweep 2026-10-12T14:50:12Z] serving Qwen/Qwen3.5-2B as qwen35_2b (load+long+gen, parser=qwen3_coder,nothink,mm=image+video)
+READY Qwen/Qwen3.5-2B after 406s
+[sweep 2026-10-12T14:56:58Z] READY Qwen/Qwen3.5-2B after 406s
+[sweep 2026-10-12T14:57:06Z] qwen35_2b load at concurrency 1: 132.9 tok/s, range 132.9 to 132.9
+[sweep 2026-10-12T14:57:14Z] qwen35_2b load at concurrency 4: 511.7 tok/s, range 511.5 to 511.7
+[sweep 2026-10-12T14:57:23Z] qwen35_2b load at concurrency 16: 1770.3 tok/s, range 1768.6 to 1794.6
+[sweep 2026-10-12T14:57:37Z] qwen35_2b long 1024 at concurrency 1: 1045 prompt tokens, 130.7 out tok/s, ttft 0.044 s
+[sweep 2026-10-12T14:57:46Z] qwen35_2b long 1024 at concurrency 4: 1045 prompt tokens, 480.8 out tok/s, ttft 0.146 s
+[sweep 2026-10-12T14:57:57Z] qwen35_2b long 1024 at concurrency 16: 1045 prompt tokens, 1516.3 out tok/s, ttft 0.334 s
+[sweep 2026-10-12T14:58:05Z] qwen35_2b long 3072 at concurrency 1: 3106 prompt tokens, 126.8 out tok/s, ttft 0.096 s
+[sweep 2026-10-12T14:58:15Z] qwen35_2b long 3072 at concurrency 4: 3106 prompt tokens, 433.9 out tok/s, ttft 0.33 s
+[sweep 2026-10-12T14:58:29Z] qwen35_2b long 3072 at concurrency 16: 3106 prompt tokens, 1111.5 out tok/s, ttft 0.814 s
+[sweep 2026-10-12T15:23:12Z] qwen35_2b gsm8k: {"task": "gsm8k", "max_tokens": 2048, "n": 1319, "right": 12, "accuracy": 0.0091, "errors": 0, "truncated": 1274, "wall_s": 1476.2}
+[sweep 2026-10-12T15:23:58Z] qwen35_2b bfcl_simple: {"task": "bfcl_simple", "max_tokens": 512, "n": 400, "right": 0, "accuracy": 0.0, "errors": 0, "truncated": 61, "wall_s": 46.4}
+[sweep 2026-10-12T15:24:14Z] serving Qwen/Qwen3.5-0.8B as qwen35_0p8b (load+long+gen, parser=qwen3_coder,nothink,mm=image+video)
+READY Qwen/Qwen3.5-0.8B after 330s
+[sweep 2026-10-12T15:29:44Z] READY Qwen/Qwen3.5-0.8B after 330s
+[sweep 2026-10-12T15:29:49Z] qwen35_0p8b load at concurrency 1: 216.9 tok/s, range 216.7 to 216.9
+[sweep 2026-10-12T15:29:54Z] qwen35_0p8b load at concurrency 4: 817.0 tok/s, range 816.5 to 817.1
+[sweep 2026-10-12T15:30:01Z] qwen35_0p8b load at concurrency 16: 2634.5 tok/s, range 2582.5 to 2699.8
+[sweep 2026-10-12T15:30:12Z] qwen35_0p8b long 1024 at concurrency 1: 1045 prompt tokens, 213.0 out tok/s, ttft 0.029 s
+[sweep 2026-10-12T15:30:17Z] qwen35_0p8b long 1024 at concurrency 4: 1045 prompt tokens, 773.7 out tok/s, ttft 0.085 s
+[sweep 2026-10-12T15:30:24Z] qwen35_0p8b long 1024 at concurrency 16: 1045 prompt tokens, 2359.4 out tok/s, ttft 0.193 s
+[sweep 2026-10-12T15:30:30Z] qwen35_0p8b long 3072 at concurrency 1: 3106 prompt tokens, 206.3 out tok/s, ttft 0.06 s
+[sweep 2026-10-12T15:30:36Z] qwen35_0p8b long 3072 at concurrency 4: 3106 prompt tokens, 697.3 out tok/s, ttft 0.189 s
+[sweep 2026-10-12T15:30:45Z] qwen35_0p8b long 3072 at concurrency 16: 3106 prompt tokens, 1756.1 out tok/s, ttft 0.458 s
+[sweep 2026-10-12T16:01:07Z] qwen35_0p8b gsm8k: {"task": "gsm8k", "max_tokens": 2048, "n": 1319, "right": 14, "accuracy": 0.0106, "errors": 0, "truncated": 1310, "wall_s": 1816.0}
+[sweep 2026-10-12T16:01:57Z] qwen35_0p8b bfcl_simple: {"task": "bfcl_simple", "max_tokens": 512, "n": 400, "right": 2, "accuracy": 0.005, "errors": 0, "truncated": 113, "wall_s": 50.2}
+[sweep 2026-10-12T16:02:12Z] DONE: all arms attempted
+Delete request issued for: [ms-2026-10-12-v5e1-tier2-1349]
+Check operation [projects/aisprint-491218/locations/us-west4-a/operations/operation-1791820939758-65da6d29d8a3d-8bb672f2-c697aada] for status.
